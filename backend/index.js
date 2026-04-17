@@ -8,9 +8,14 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: 'https://app-lxwt.vercel.app', // URL de tu frontend que aparece en el error
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: function (origin, callback) {
+        // Permitir peticiones sin origen (como Postman) o desde tu frontend
+        if (!origin || origin === 'https://app-lxwt.vercel.app') {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 app.use(express.json());
