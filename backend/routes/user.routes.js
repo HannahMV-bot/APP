@@ -1,5 +1,5 @@
 import express from 'express';
-import User from '../models/User.js'; // <-- IMPORTANTE: el .js al final
+import User from '../models/user.js'; // <-- IMPORTANTE: el .js al final
 import bcrypt from 'bcryptjs';
 
 const router = express.Router();
