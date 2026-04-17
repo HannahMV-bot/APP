@@ -7,26 +7,33 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "tos.png", "tos.png", "icon.png",  "icon.png", "robots.txt"],
+
+      includeAssets: [
+        "favicon.svg",
+        "robots.txt",
+        "img/icono.png"
+      ],
+
       workbox: {
         navigateFallback: "/index.html",
-        globPatterns: ["**/*.{js,jsx,css,html,ico,png,svg}"],
+        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
+
       manifest: {
-        name: "Mi Aplicación linda",
-        short_name: "ReactPWA",
-        description: "Una increíble aplicación creada por mí",
+        name: "Mi Aplicación de Gastos",
+        short_name: "Gastos",
+        description: "Sistema de gestión de gastos",
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#090836",
+
         screenshots: [
           {
-            
             src: "/img/gastos.png",
             sizes: "1280x581",
             type: "image/png",
-            form_factor: "narrow", //es para pantallas pequeñas como móviles 
+            form_factor: "narrow",
           },
           {
             src: "/img/gastos.png",
@@ -35,6 +42,7 @@ export default defineConfig({
             form_factor: "wide",
           },
         ],
+
         icons: [
           {
             src: "/img/icono.png",
@@ -47,6 +55,10 @@ export default defineConfig({
             type: "image/png",
           },
         ],
+      },
+
+      devOptions: {
+        enabled: true, 
       },
     }),
   ],

@@ -11,7 +11,8 @@ const app = express();
 // ==============================================================
 const allowedOrigins = [
     'https://app-lxwt.vercel.app', // Tu app en Vercel
-    'http://localhost:5173',        // Tu app local con Vite
+    'http://localhost:5173', 
+    'http://localhost:4173',       // Tu app local con Vite
     'http://127.0.0.1:5173'        // Alternativa local
 ];
 
