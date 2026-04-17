@@ -11,8 +11,8 @@ import { Footer } from './features/layout/components/Footer';
 import Iniciar from './features/auth/components/Iniciar';
 import Registro from './features/auth/components/Registro';
 import { Dashboard } from './features/dashboard/pages/Dashboard';
-import { ApiRyc } from './shared/components/ApiRyc'; 
-import { ApiRyC_Axios } from './shared/components/ApiRyc_Axios' ;
+import  ApiRyc  from './shared/components/ApiRyc'; 
+import  ApiRycAxios  from './shared/components/ApiRycAxios' ;
 
 export const AppRoutes = () => {
   // Estado de autenticación basado en el token del localStorage

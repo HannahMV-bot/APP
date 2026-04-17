@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-export const ApiRyC_Axios = () => {
+export const ApiRycAxios = () => {
   const [characters, setCharacters] = useState([]);
   const [pages, setPages] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
@@ -136,4 +136,4 @@ export const ApiRyC_Axios = () => {
   );
 };
 
-export default ApiRyC_Axios;
+export default ApiRycAxios;
