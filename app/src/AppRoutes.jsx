@@ -57,7 +57,7 @@ export const AppRoutes = () => {
             <Route path="/beneficios" element={<Beneficios />} />
             <Route path="/precios" element={<Precios />} />
             <Route path="/apis" element={<ApiRyc />} />
-            <Route path="/api-axios" element={<ApiRyC_Axios />} />
+            <Route path="/api-axios" element={<ApiRycAxios />} />
 
             {/* LOGIN: Si ya está logueado, redirige al Dashboard */}
             <Route 
