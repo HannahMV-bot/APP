@@ -9,26 +9,19 @@ const app = express();
 // ==============================================================
 // CONFIGURACIÓN DE CORS (Ajustada para Local y Producción)
 // ==============================================================
-const allowedOrigins = [
-    'https://app-ls9n.vercel.app/', // Tu app en Vercel
-    'http://localhost:5173', 
-    'http://localhost:4173',       // Tu app local con Vite
-    'http://127.0.0.1:5173'        // Alternativa local
-];
-
 app.use(cors({
-    origin: function (origin, callback) {
-        // Permitir peticiones sin origen (como Postman o apps móviles)
-        // o si el origen está en la lista de permitidos
-        if (!origin || allowedOrigins.includes(origin)) {
+    origin: (origin, callback) => {
+        if (
+            !origin ||
+            origin.includes('vercel.app') ||   // 🔥 permite cualquier deploy de Vercel
+            origin.includes('localhost')       // 🔥 permite desarrollo local
+        ) {
             callback(null, true);
         } else {
-            callback(new Error('Error de CORS: Origen no permitido por la configuración.'));
+            callback(new Error('CORS no permitido'));
         }
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
