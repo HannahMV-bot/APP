@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 1. Prioridad a la variable de entorno, de lo contrario usamos localhost.
 // Nota: Asegúrate de que el puerto coincida con el de tu servidor local (ej: 4000)
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://app-c6s4.onrender.com";
 
 const API = axios.create({
   baseURL: `${BASE_URL}/api/users`, 
