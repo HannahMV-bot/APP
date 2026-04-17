@@ -7,7 +7,12 @@ import userRoutes from './routes/user.routes.js';
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: 'https://app-lxwt.vercel.app', // URL de tu frontend que aparece en el error
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
 app.use(express.json());
 
 // Rutas
